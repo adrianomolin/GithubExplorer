@@ -17,7 +17,10 @@ export function RepositoriesSearch() {
     <Container>
       <SearchInput
         placeholder='Pesquisar um usuário'
-        onInput={({ target }) => setUser(target.value)}
+        onInput={(e) => {
+          const target = e.target as HTMLInputElement;
+          setUser(target.value);
+        }}
       />
       <SearchButton onClick={handleInputSubmit}>
         <SearchIcon src={Search} width={28}/>

@@ -4,4 +4,6 @@ export interface Repository {
   owner: {
     login: string,
   }
+  description: string,
+  html_url: string,
 }
