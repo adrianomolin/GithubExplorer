@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
-import { getAuth, GithubAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { getAuth, GithubAuthProvider, signInWithPopup, signOut, User } from 'firebase/auth';
 
 import { UserProps } from '../types/User';
 import { useHistory } from 'react-router-dom';
@@ -8,6 +8,12 @@ interface AuthProps {
   signIn: () => void,
   signOut: () => void,
   user: UserProps | null,
+}
+
+interface FirebaseUserProps extends User {
+  reloadUserInfo: {
+    screenName: string
+  }
 }
 
 interface AuthProviderProps {
@@ -34,7 +40,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         localStorage.setItem('token',token || '');
 
         // The signed-in user info.
-        const user = result.user;
+        const user = result.user as FirebaseUserProps;
 
         if (user) {
           const userData = {
