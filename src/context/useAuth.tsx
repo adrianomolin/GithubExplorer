@@ -28,7 +28,6 @@ export function AuthProvider({ children }: AuthProviderProps) {
 
   const history = useHistory();
 
-  console.log(history);
   const auth = getAuth();
 
   async function signIn() {
