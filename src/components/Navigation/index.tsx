@@ -8,8 +8,8 @@ interface NavigationProps {
 export function Navigation({ visible }: NavigationProps) {
   return (
     <NavigationContainer style={{ opacity: visible ? 1 : 0}}>
-      <Link to='/'>Home</Link>
-      <Link to='/user/repositories'>Meus Repositórios</Link>
+      <Link to='/' >Home</Link>
+      <Link to='/user/repositories' >Meus Repositórios</Link>
     </NavigationContainer>
   );
 }

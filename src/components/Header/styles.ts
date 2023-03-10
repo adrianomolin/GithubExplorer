@@ -25,11 +25,11 @@ export const LoginButton = styled.button`
   padding: 12px;
   border-radius: 50px;
 
-  transition: transform ease-in .5s;
+  transition: transform ease-in .1s;
 
   :hover {
     box-shadow: 0px 4px 4px rgba(240, 240, 240, 0.6);
-    transform: scale(1.025);
+    transform: scale(0.9875);
   }
 `;
 

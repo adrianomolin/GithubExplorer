@@ -20,24 +20,19 @@ export function RepoProvider({ children }: RepoProviderProps) {
   const [repos, setRepos] = useState([]);
 
   function searchUser(user: string) {
-    if (user !== '') {
-      setRepoURL(prevState => 'users/'+user+'/repos');
-    } else {
-      setRepoURL('repositories');
-    }
+    user === '' ? setRepoURL('repositories') : setRepoURL('users/'+user+'/repos');
   }
 
   useEffect(() => {
+    setRepos([]);
     async function UpdateRepos() {
-      setRepos([]);
-
       const repositories = await axios.get(`${api}/${repoURL}`, { });
 
       if (repositories) {
         const { data } = repositories;
 
-        // setTimeout(() => setRepos(data), 4000);
-        setRepos(data);
+        setTimeout(() => setRepos(data), 1500);
+        // setRepos(data);
       }
     }
     UpdateRepos();

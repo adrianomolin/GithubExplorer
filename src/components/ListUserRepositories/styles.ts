@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 
 export const RepositoriesContainer = styled.div`
-  height: 500px;
+  height: 600px;
   flex: 1;
-  width: 100%;
+  width: 900px;
 `;
 
 export const RepositoryContainer = styled.div`
   margin: 8px auto;
-  height: 148px;
-  width: 900px;
+  height: 150px;
+  width: 850px;
   padding: 16px;
   background: #fafafa;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.1);
@@ -19,6 +19,11 @@ export const RepositoryContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 32px;
+
+  transition: transform ease-in .2s;
+  :hover {
+    transform: scale(1.025)
+  }
 `;
 
 export const About = styled.div`
@@ -28,7 +33,6 @@ export const About = styled.div`
 `;
 
 export const LoaderContainer = styled.div`
-  width: 600px;
   height: 100%;
   display: flex;
   align-items: center;
